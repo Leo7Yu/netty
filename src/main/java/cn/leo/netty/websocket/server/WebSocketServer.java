@@ -1,4 +1,4 @@
-package cn.leo.netty.netty.websocket.server;
+package cn.leo.netty.websocket.server;
 
 import org.springframework.stereotype.Component;
 

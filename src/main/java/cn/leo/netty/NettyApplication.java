@@ -1,4 +1,4 @@
-package cn.leo.netty.netty;
+package cn.leo.netty;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package cn.leo.netty.netty;
+package cn.leo.netty;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

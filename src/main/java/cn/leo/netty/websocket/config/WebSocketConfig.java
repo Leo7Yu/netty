@@ -1,4 +1,4 @@
-package cn.leo.netty.netty.websocket.config;
+package cn.leo.netty.websocket.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

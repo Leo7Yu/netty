@@ -1,6 +1,6 @@
-package cn.leo.netty.netty.websocket.controller;
+package cn.leo.netty.websocket.controller;
 
-import cn.leo.netty.netty.websocket.server.WebSocketServer;
+import cn.leo.netty.websocket.server.WebSocketServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

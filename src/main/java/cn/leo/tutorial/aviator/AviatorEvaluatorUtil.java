@@ -12,6 +12,7 @@ public class AviatorEvaluatorUtil {
         AviatorEvaluator.addFunction(new MinFunction());
     }
 
+    @SuppressWarnings("unchecked")
     public static <T> T execute(String expression, Map<String, Object> param, T defaultValue) {
         try {
             return ((T) AviatorEvaluator.execute(expression, param, true));

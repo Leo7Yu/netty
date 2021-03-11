@@ -1,5 +1,6 @@
 package cn.leo.tutorial.eventbus;
 
+import com.google.common.collect.Range;
 import com.google.common.eventbus.AsyncEventBus;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;

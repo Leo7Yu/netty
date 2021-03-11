@@ -60,6 +60,12 @@
 			<artifactId>easy-rules-core</artifactId>
 			<version>4.1.0</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.googlecode.aviator</groupId>
+			<artifactId>aviator</artifactId>
+			<version>5.2.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>

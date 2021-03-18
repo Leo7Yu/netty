@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 /**
  * @author leo 2021/3/9 上午11:53
  **/
-public class Main {
+public class EventBusMain {
 
     /**
      * 1.同步执行，事件发送方在发出事件之后，会等待所有的事件消费方执行完毕后，才会回来继续执行自己后面的代码。

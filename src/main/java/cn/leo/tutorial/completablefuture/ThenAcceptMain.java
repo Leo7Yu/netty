@@ -1,6 +1,8 @@
 package cn.leo.tutorial.completablefuture;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * @author leo 2021/3/12 上午11:10
@@ -8,14 +10,20 @@ import java.util.concurrent.CompletableFuture;
 public class ThenAcceptMain {
 
     public static void main(String[] args) throws InterruptedException {
-        ThenAcceptMain instance = new ThenAcceptMain();
+        ExecutorService fixedThreadPool = Executors.newFixedThreadPool(3);
 
         // 创建异步执行任务:
-        CompletableFuture<Double> cf = CompletableFuture.supplyAsync(ThenAcceptMain::fetchPrice);
+        // 第一个任务:
+        CompletableFuture<String> cfQuery = CompletableFuture
+            .supplyAsync(() -> queryCode("中国石油"), fixedThreadPool);
+        // cfQuery成功后继续执行下一个任务:
+        CompletableFuture<Double> cfFetch = cfQuery.thenApplyAsync(ThenAcceptMain::fetchPrice);
+
+        ThenAcceptMain instance = new ThenAcceptMain();
         // 如果执行成功:
-        cf.thenAccept(instance::processResult);
+        cfFetch.thenAccept(instance::processResult);
         // 如果执行异常:
-        cf.exceptionally((e) -> {
+        cfFetch.exceptionally((e) -> {
             e.printStackTrace();
             return null;
         });
@@ -23,7 +31,15 @@ public class ThenAcceptMain {
         Thread.sleep(200);
     }
 
-    static Double fetchPrice() {
+    static String queryCode(String name) {
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+        }
+        return "601857";
+    }
+
+    static Double fetchPrice(String code) {
         try {
             Thread.sleep(100);
         } catch (InterruptedException ignored) {

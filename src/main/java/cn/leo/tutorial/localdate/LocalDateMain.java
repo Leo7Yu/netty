@@ -16,7 +16,7 @@ public class LocalDateMain {
     public static void main(String[] args) {
         LocalDate localDate = LocalDate.now();
         System.out.println(localDate);
-        localDate = localDate.withDayOfMonth(2);
+        localDate = localDate.withDayOfMonth(1);
         System.out.println(localDate);
         localDate = localDate.plusMonths(1);
         System.out.println(localDate);
